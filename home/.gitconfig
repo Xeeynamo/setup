@@ -1,0 +1,7 @@
+[alias]
+	h = log --graph --oneline --all --pretty=format:\"%C(yellow)%h%Creset %C(magenta)(%cr)%Creset %C(cyan)%cn%Creset %s %C(auto)%d%Creset\"
+[user]
+	name = Luciano Ciccariello
+	email = xeeynamo@hotmail.com
+[core]
+	editor = code --wait

@@ -1,0 +1,4 @@
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\C-h": backward-kill-word
+set completion-ignore-case On
