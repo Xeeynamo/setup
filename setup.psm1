@@ -4,5 +4,7 @@ function Start-Setup {
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
 
     $chocopkgs = Get-ChocoPackages "chocopkg.txt"
-    Install-ChocoPackages $chocopkgs 0
+    Install-ChocoPackages $chocopkgs 1
+    Install-ChocoPackages $chocopkgs 2
+    Install-ChocoPackages $chocopkgs 3
 }
