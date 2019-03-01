@@ -40,6 +40,24 @@ function Invoke-TemporaryZipDownload([string]$name, [string]$uri, [ScriptBlock]$
     Remove-Item -Path $outDir -Recurse -Force
 }
 
+function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$action) {
+    $outDir = Join-Path $tempDir $name
+
+    New-TempDirectory
+
+    if (Test-Path -Path $outDir) {
+        Remove-Item $outDir -Recurse -Force
+    }
+
+    & git clone $uri $outDir
+
+    Push-Location $outDir
+    $action.Invoke()
+    Pop-Location
+
+    Remove-Item -Path $outDir -Recurse -Force
+}
+
 function Install-UserProfile {
     Get-ChildItem -Path './home' |
         Select-Object -ExpandProperty Name |
