@@ -53,7 +53,6 @@
 ####################
 # Development
 ####################
-0 git
 0 git-lfs
 0 curl
 0 cmake

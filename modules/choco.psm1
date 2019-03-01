@@ -34,6 +34,6 @@ function Install-ChocoPackages([ChocoPackage[]]$packages, [string]$priority) {
         Where-Object { $_.Priority -eq $priority } |
         ForEach-Object {
             Write-Host "Installing" $_.Name
-            & choco install $_.Name -y
+            & choco install $_.Name --confirm --limit-output
         }
 }
