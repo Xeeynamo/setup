@@ -10,8 +10,13 @@ if (Test-Path -Path $setupPath) {
     Remove-Item $setupPath -Recurse -Force
 }
 
-# Install git and clone the setup repository
+# Install git
 & choco install git --confirm --limit-output
+
+# Reset the path environment
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
+
+# Clone the setup repository
 & git clone $repoUri $setupPath
 
 # Enter inside the repository and invoke the real set-up process
