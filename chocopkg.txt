@@ -1,95 +1,95 @@
 ####################
 # Basic
 ####################
-googlechrome
-setpoint
-winrar
-keepass
-putty
-filezilla
-dropbox
-teamviewer
-qbittorrent
-discord
+0 googlechrome
+0 setpoint
+0 winrar
+0 keepass
+0 putty
+0 filezilla
+0 dropbox
+0 teamviewer
+0 qbittorrent
+0 discord
 
 ####################
 # Multimedia
 ####################
-foobar2000
-spotify
-k-litecodecpackfull
-mp3tag
-picard
-audacity
-calibre
+0 foobar2000
+0 spotify
+0 k-litecodecpackfull
+0 mp3tag
+0 picard
+0 audacity
+0 calibre
 
 ####################
 # Entertainment
 ####################
-ds4windows
-cemu
-steam
+0 ds4windows
+0 cemu
+0 steam
 
 ####################
 # Monitoring
 ####################
-cpu-z
-gpu-z
-coretemp
-intel-xtu
-crystaldiskinfo
+0 cpu-z
+0 gpu-z
+0 coretemp
+0 intel-xtu
+0 crystaldiskinfo
 
 ####################
 # Tools
 ####################
-winmerge
-sysinternals
-poweriso
-win32diskimager
-cheatengine
-tor-browser
-Bitnami-XAMPP
+0 winmerge
+0 sysinternals
+0 poweriso
+0 win32diskimager
+0 cheatengine
+0 tor-browser
+0 Bitnami-XAMPP
 
 ####################
 # Development
 ####################
-git
-git-lfs
-curl
-cmake
-poshgit
-dependencywalker
-reshack
-gitkraken
-postman
-angryip
-dotpeek
-fiddler
-redis-desktop-manager
-docker-cli
-unity
+0 git
+0 git-lfs
+0 curl
+0 cmake
+0 poshgit
+0 dependencywalker
+0 reshack
+0 gitkraken
+0 postman
+0 angryip
+0 dotpeek
+0 fiddler
+0 redis-desktop-manager
+0 docker-cli
+0 unity
 
 ####################
 # IDE and editors
 ####################
-notepadplusplus
-vscode
-# vscode-csharp
-# visualstudio2017professional
+0 notepadplusplus
+0 vscode
+# 0 vscode-csharp
+# 0 visualstudio2017professional
 
 ####################
 # Runtime
 ####################
-vcredist-all
-dotnetcore-runtime
-javaruntime
+0 vcredist-all
+0 dotnetcore-runtime
+0 javaruntime
 
 ####################
 # SDK
 ####################
-netfx-4.5.2-devpack
-netfx-4.7.2-devpack
-jdk11
-mingw
-python2
-nodejs
+0 netfx-4.5.2-devpack
+0 netfx-4.7.2-devpack
+0 jdk11
+0 mingw
+0 python2
+0 nodejs
