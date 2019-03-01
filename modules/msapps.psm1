@@ -1,3 +1,15 @@
+function New-MakeDirectoryForce([string]$path) {
+    # Thanks to raydric, this function should be used instead of `mkdir -force`.
+    #
+    # While `mkdir -force` works fine when dealing with regular folders, it behaves
+    # strange when using it at registry level. If the target registry key is
+    # already present, all values within that key are purged.
+    if (!(Test-Path $path)) {
+        #Write-Host "-- Creating full path to: " $path -ForegroundColor White -BackgroundColor DarkGreen
+        New-Item -ItemType Directory -Force -Path $path
+    }
+}
+
 function Uninstall-StoreApps {
      @(
         # default Windows 10 apps
@@ -118,7 +130,7 @@ function Uninstall-StoreApps {
     }
 
     # Prevents Apps from re-installing
-    force-mkdir "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager"
+    New-MakeDirectoryForce "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager"
     Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "FeatureManagementEnabled" 0
     Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "OemPreInstalledAppsEnabled" 0
     Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "PreInstalledAppsEnabled" 0
@@ -134,6 +146,6 @@ function Uninstall-StoreApps {
     Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SystemPaneSuggestionsEnabled" 0
 
     # Prevents "Suggested Applications" returning
-    force-mkdir "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
+    New-MakeDirectoryForce "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
     Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" 1
 }

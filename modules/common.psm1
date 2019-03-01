@@ -4,6 +4,18 @@ function Reset-PathEnvironment() {
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 }
 
+function New-MakeDirectoryForce([string]$path) {
+    # Thanks to raydric, this function should be used instead of `mkdir -force`.
+    #
+    # While `mkdir -force` works fine when dealing with regular folders, it behaves
+    # strange when using it at registry level. If the target registry key is
+    # already present, all values within that key are purged.
+    if (!(Test-Path $path)) {
+        #Write-Host "-- Creating full path to: " $path -ForegroundColor White -BackgroundColor DarkGreen
+        New-Item -ItemType Directory -Force -Path $path
+    }
+}
+
 function Get-TemporaryDownload([string]$uri) {
     $tmpFile = New-TemporaryFile
     Invoke-WebRequest -Uri $uri -OutFile $tmpFile.FullName

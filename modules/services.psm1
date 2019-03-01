@@ -27,10 +27,6 @@ function Disable-EasyAccessKeyboard {
     Set-ItemProperty "HKCU:\Control Panel\Accessibility\ToggleKeys" "Flags" "58"    
 }
 
-function Disable-MsEdgeShortcut {
-    New-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "DisableEdgeDesktopShortcutCreation" -PropertyType "DWORD" -Value 1
-}
-
 function Set-FolderViewOptions {
     Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
     Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
