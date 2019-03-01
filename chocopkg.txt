@@ -1,1 +1,95 @@
+####################
+# Basic
+####################
 googlechrome
+setpoint
+winrar
+keepass
+putty
+filezilla
+dropbox
+teamviewer
+qbittorrent
+discord
+
+####################
+# Multimedia
+####################
+foobar2000
+spotify
+k-litecodecpackfull
+mp3tag
+picard
+audacity
+calibre
+
+####################
+# Entertainment
+####################
+ds4windows
+cemu
+steam
+
+####################
+# Monitoring
+####################
+cpu-z
+gpu-z
+coretemp
+intel-xtu
+crystaldiskinfo
+
+####################
+# Tools
+####################
+winmerge
+sysinternals
+poweriso
+win32diskimager
+cheatengine
+tor-browser
+Bitnami-XAMPP
+
+####################
+# Development
+####################
+git
+git-lfs
+curl
+cmake
+poshgit
+dependencywalker
+reshack
+gitkraken
+postman
+angryip
+dotpeek
+fiddler
+redis-desktop-manager
+docker-cli
+unity
+
+####################
+# IDE and editors
+####################
+notepadplusplus
+vscode
+# vscode-csharp
+# visualstudio2017professional
+
+####################
+# Runtime
+####################
+vcredist-all
+dotnetcore-runtime
+javaruntime
+
+####################
+# SDK
+####################
+netfx-4.5.2-devpack
+netfx-4.7.2-devpack
+jdk11
+mingw
+python2
+nodejs
