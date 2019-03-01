@@ -5,14 +5,14 @@ function Start-Setup {
     do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
 
     $chocopkgs = Get-ChocoPackages "chocopkg.txt"
-    Install-ChocoPackages $chocopkgs 1
+    #Install-ChocoPackages $chocopkgs 1
         
     Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
         & ./colortool "-d" "-b" "-x" "solarized_dark"
     }
 
-    Install-ChocoPackages $chocopkgs 2
-    Install-ChocoPackages $chocopkgs 3
+    #Install-ChocoPackages $chocopkgs 2
+    #Install-ChocoPackages $chocopkgs 3
 
     Set-UselessServicesOff
     Uninstall-StoreApps
