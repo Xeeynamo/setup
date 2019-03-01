@@ -2,7 +2,7 @@
 # Basic
 ####################
 1 googlechrome
-1 setpoint
+1 logitech-options
 1 winrar
 1 keepass
 2 putty
