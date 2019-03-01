@@ -7,11 +7,6 @@ function Get-TemporaryDownload([string]$uri) {
     return $tmpFile.FullName
 }
 
-function Unzip([string]$zipfile, [string]$outpath) {
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
-}
-
-
 function New-TempDirectory {
     if (!(Test-Path -Path $tempDir)) {
         New-Item -ItemType Directory -Force -Path $tempDir
@@ -24,15 +19,25 @@ function Remove-TempDirectory {
     }
 }
 
-function Invoke-TemporaryZipDownload([string]$name, [string]$uri, $action) {
+function Invoke-TemporaryZipDownload([string]$name, [string]$uri, [ScriptBlock]$action) {
     $outFile = Join-Path $tempDir ($name + ".zip")
     $outDir = Join-Path $tempDir $name
 
+    New-TempDirectory
+
+    if (Test-Path -Path $outDir) {
+        Remove-Item $outDir -Recurse -Force
+    }
+
     Invoke-WebRequest -Uri $uri -OutFile $outFile
-    Unzip $outFile $outDir
+    Expand-Archive $outFile -DestinationPath $outDir -Force
+
     Push-Location $outDir
-    $action
+    $action.Invoke()
     Pop-Location
+
+    Remove-Item -Path $outFile
+    Remove-Item -Path $outDir -Recurse -Force
 }
 
 function Install-UserProfile {
