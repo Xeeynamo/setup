@@ -36,4 +36,6 @@ function Install-ChocoPackages([ChocoPackage[]]$packages, [string]$priority) {
             Write-Host "Installing" $_.Name
             & choco install $_.Name --confirm --limit-output
         }
+
+    Reset-PathEnvironment()
 }

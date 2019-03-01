@@ -1,5 +1,9 @@
 $tempDir = "./.tmp"
 
+function Reset-PathEnvironment() {
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
+}
+
 function Get-TemporaryDownload([string]$uri) {
     $tmpFile = New-TemporaryFile
     Invoke-WebRequest -Uri $uri -OutFile $tmpFile.FullName
