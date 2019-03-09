@@ -3,6 +3,7 @@ function Start-Setup {
 
     Get-ChildItem .\modules\common.psm1 | Import-Module -Force
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
+    $global:setupPath = (Get-Location).Path
 
     Disable-UselessServices
     Uninstall-StoreApps
@@ -15,9 +16,21 @@ function Start-Setup {
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
 
-    # Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
-    #     & ./colortool "-d" "-b" "-x" "solarized_dark"
-    # }
+    Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
+        Set-PSReadlineOption -Color @{
+            "Command" = [ConsoleColor]::Green
+            "Parameter" = [ConsoleColor]::Gray
+            "Operator" = [ConsoleColor]::Magenta
+            "Variable" = [ConsoleColor]::White
+            "String" = [ConsoleColor]::Yellow
+            "Number" = [ConsoleColor]::Blue
+            "Type" = [ConsoleColor]::Cyan
+            "Comment" = [ConsoleColor]::DarkCyan
+        }
+
+        $termColorsPath = Join-Path $global:setupPath "configs/Dracula-ColorTool.itermcolors"
+        (& ./colortool "-d" "-b" "-x" $termColorsPath) | Out-Null
+    }
 
     Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
         & ./scripts/block-telemetry.ps1
