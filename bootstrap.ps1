@@ -2,6 +2,8 @@
 $repoUri = 'https://github.com/Xeeynamo/setup.git'
 $setupPath = "./xeeynamo-setup"
 
+Push-Location "/"
+
 # Install chocolately, the minimum requirement
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -27,3 +29,4 @@ Start-Setup
 # Clean
 Pop-Location
 Remove-Item $setupPath -Recurse -Force
+Pop-Location
