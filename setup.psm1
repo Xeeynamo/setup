@@ -10,6 +10,21 @@ function Start-Setup {
     Disable-EasyAccessKeyboard
     Set-FolderViewOptions
     Disable-AeroShaking
+
+    @(
+        "Printing-XPSServices-Features"
+        "Printing-XPSServices-Features"
+        "FaxServicesClientPackage"
+        "Microsoft-Hyper-V-All"
+    ) | ForEach-Object { Disable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
+
+    @(
+        "TelnetClient"
+        "Microsoft-Windows-Subsystem-Linux"
+        "HypervisorPlatform"
+        "NetFx3"
+        "Microsoft-Hyper-V-All"
+    ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
     
     Install-StartLayout "./configs/start-layout.xml"
 
