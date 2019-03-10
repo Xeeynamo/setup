@@ -10,11 +10,17 @@ function Start-Setup {
     Disable-EasyAccessKeyboard
     Set-FolderViewOptions
     Disable-AeroShaking
+    
+    Install-StartLayout "./configs/start-layout.xml"
 
     $chocopkgs = Get-ChocoPackages "chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
+    
+    Get-ChildItem .\modules\common.psm1 | Import-Module -Force
+    Get-ChildItem .\modules\*.psm1 | Import-Module -Force
+    $global:setupPath = (Get-Location).Path
 
     Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
         & ./scripts/block-telemetry.ps1
@@ -47,6 +53,7 @@ function Start-Setup {
         $termColorsPath = Join-Path $global:setupPath "configs/Dracula-ColorTool.itermcolors"
         (& ./colortool "-d" "-b" "-x" $termColorsPath) | Out-Null
     }
+
 
     Remove-TempDirectory
 }
