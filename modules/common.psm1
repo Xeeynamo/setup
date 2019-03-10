@@ -71,6 +71,7 @@ function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$
 
     Push-Location $outDir
     $action.Invoke()
+    Remove-Item ".git" -Recurse -Force -IgnoreNonExistentPaths
     Pop-Location
 }
 
