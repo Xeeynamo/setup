@@ -26,6 +26,7 @@ function Start-Setup {
     ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
     
     Install-WindowsDeveloperMode
+    Set-HidePeopleOnTaskbar $true
     Install-StartLayout "./configs/start-layout.xml"
 
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
