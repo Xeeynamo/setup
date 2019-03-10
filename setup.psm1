@@ -28,7 +28,7 @@ function Start-Setup {
     
     Install-StartLayout "./configs/start-layout.xml"
 
-    $chocopkgs = Get-ChocoPackages "chocopkg.txt"
+    $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
