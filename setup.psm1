@@ -27,6 +27,7 @@ function Start-Setup {
     
     Install-WindowsDeveloperMode
     Set-HidePeopleOnTaskbar $true
+    Set-ShowPeopleOnTaskbar $false
     Install-StartLayout "./configs/start-layout.xml"
 
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
