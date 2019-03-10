@@ -15,6 +15,7 @@ From a powershell console, as an Administrator, just launch the following comman
 * Disable useless Windows services
 * Remove the damn pre-installed Windows Apps (addio Candy Crush Saga)
 * Enable Developer Mode
+* Make the taskbar decent for multi-monitor configurations
 * Remove XPS and Fax services
 * Enable Telnet, .Net Framework 3.5, Hyper-V and Linux Subsystem
 * Disable telemetry
@@ -22,3 +23,11 @@ From a powershell console, as an Administrator, just launch the following comman
 * Install a bunch of softwares
 * Install a customized Start layout
 * Restore a back-up of home folder
+
+# To do
+
+* Make the script more configurable
+* Set-up a private repository that restores keys, licenses and personal information
+* Create a back-up script that upload the current settings into the private backup repository
+* Script that upgrade all the installed softwares
+* Script that revert the changes made by this set-up script
