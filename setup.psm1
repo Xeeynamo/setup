@@ -27,8 +27,9 @@ function Start-Setup {
         & code "--install-extension" "dracula.vsix"
     }
 
-    # Install Dracula theme for Notepad++
+    # Install Dracula theme and configs for Notepad++
     Get-DownloadFile "~\AppData\Roaming\Notepad++\themes\Dracula.xml" "https://raw.githubusercontent.com/dracula/notepad-plus-plus/master/Dracula.xml"
+    Copy-Item ".\configs\notepadplusplus\config.xml" "~\AppData\Roaming\Notepad++\"
 
     # Install Dracula theme for all terminals
     Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
