@@ -15,7 +15,6 @@ function Start-Setup {
         "Printing-XPSServices-Features"
         "Printing-XPSServices-Features"
         "FaxServicesClientPackage"
-        "Microsoft-Hyper-V-All"
     ) | ForEach-Object { Disable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
 
     @(
