@@ -35,6 +35,29 @@ function Remove-TempDirectory {
     }
 }
 
+function Get-DownloadFile([string]$output, [string]$uri) {
+    if (Test-Path -Path $output) {
+        Remove-Item $output -Force
+    }
+
+    New-MakeDirectoryForce ($output | Split-Path)
+    Invoke-WebRequest -Uri $uri -OutFile $output
+}
+
+function Get-DownloadTemporaryFile([string]$outFile, [string]$uri, [ScriptBlock]$action) {
+    New-TempDirectory
+
+    if (Test-Path -Path $outFile) {
+        Remove-Item $outFile -Force
+    }
+
+    Push-Location $tempDir
+    Invoke-WebRequest -Uri $uri -OutFile $outFile
+    $action.Invoke()
+    Remove-Item $outFile -Force
+    Pop-Location
+}
+
 function Invoke-TemporaryZipDownload([string]$name, [string]$uri, [ScriptBlock]$action) {
     $outFile = Join-Path $tempDir ($name + ".zip")
     $outDir = Join-Path $tempDir $name
