@@ -16,6 +16,13 @@ function Start-Setup {
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
 
+    Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
+        & ./scripts/block-telemetry.ps1
+    }
+
+    Install-VisualStudioProfessional "./configs/dev.vsconfig"
+
+    # Install Dracula theme for all terminals
     Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
         Set-PSReadlineOption -Color @{
             "Command" = [ConsoleColor]::Green
@@ -31,12 +38,6 @@ function Start-Setup {
         $termColorsPath = Join-Path $global:setupPath "configs/Dracula-ColorTool.itermcolors"
         (& ./colortool "-d" "-b" "-x" $termColorsPath) | Out-Null
     }
-
-    Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
-        & ./scripts/block-telemetry.ps1
-    }
-
-    Install-VisualStudioProfessional "./configs/dev.vsconfig"
 
     Remove-TempDirectory
 }
