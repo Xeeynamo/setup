@@ -56,13 +56,15 @@ function Invoke-TemporaryZipDownload([string]$name, [string]$uri, [ScriptBlock]$
     Remove-Item -Path $outDir -Recurse -Force
 }
 
-function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$action) {
-    $outDir = Join-Path $tempDir $name
-
-    New-TempDirectory
-
-    if (Test-Path -Path $outDir) {
-        Remove-Item $outDir -Recurse -Force
+function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$action, [string]$outDir) {
+    if ($null -eq $outDir) {
+        $outDir = Join-Path $tempDir $name
+    
+        New-TempDirectory
+    
+        if (Test-Path -Path $outDir) {
+            Remove-Item $outDir -Recurse -Force
+        }
     }
 
     & git clone $uri $outDir
@@ -70,8 +72,6 @@ function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$
     Push-Location $outDir
     $action.Invoke()
     Pop-Location
-
-    Remove-Item -Path $outDir -Recurse -Force
 }
 
 function Install-UserProfile {

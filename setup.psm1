@@ -23,11 +23,15 @@ function Start-Setup {
     Install-VisualStudioProfessional "./configs/dev.vsconfig"
 
     # Install Dracula theme for Visual Studio Code
-    Invoke-TemporaryZipDownload "colortool" "https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula" {
-        Push-Location "~/.vscode/extensions/theme-dracula"
+    Invoke-TemporaryGitDownload "darcula-vscode" "https://github.com/dracula/visual-studio-code.git" {
         & npm install
         & npm run build
-        Pop-Location
+    } "~/.vscode/extensions/theme-dracula"
+
+    # Install Dracula theme for Notepad++
+    Invoke-TemporaryGitDownload "darcula-notepadplusplus" "https://github.com/dracula/notepad-plus-plus.git" {
+        New-MakeDirectoryForce "%AppData%\Notepad++\themes"
+        Copy-Item "Dracula.xml" "%AppData%\Notepad++\themes"
     }
 
     # Install Dracula theme for all terminals
