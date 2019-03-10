@@ -37,5 +37,6 @@ function Install-ChocoPackages([ChocoPackage[]]$packages, [string]$priority) {
             & choco install $_.Name --confirm --limit-output
         }
 
-    Reset-PathEnvironment
+    # Reset-PathEnvironment
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 }
