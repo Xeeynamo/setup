@@ -22,6 +22,14 @@ function Start-Setup {
 
     Install-VisualStudioProfessional "./configs/dev.vsconfig"
 
+    # Install Dracula theme for Visual Studio Code
+    Invoke-TemporaryZipDownload "colortool" "https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula" {
+        Push-Location "~/.vscode/extensions/theme-dracula"
+        & npm install
+        & npm run build
+        Pop-Location
+    }
+
     # Install Dracula theme for all terminals
     Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
         Set-PSReadlineOption -Color @{
