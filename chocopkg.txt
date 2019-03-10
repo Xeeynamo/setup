@@ -89,8 +89,6 @@
 ####################
 # SDK
 ####################
-1 netfx-4.5.2-devpack
-1 netfx-4.7.2-devpack
 1 mingw
 2 python2
 2 jdk11
