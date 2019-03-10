@@ -8,3 +8,7 @@ function Install-StartLayout([string]$fileName) {
     Stop-Process -ProcessName "explorer"
 
 }
+
+function Install-WindowsDeveloperMode {
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+}

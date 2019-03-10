@@ -26,6 +26,7 @@ function Start-Setup {
         "Microsoft-Hyper-V-All"
     ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
     
+    Install-WindowsDeveloperMode
     Install-StartLayout "./configs/start-layout.xml"
 
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
