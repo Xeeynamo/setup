@@ -28,5 +28,4 @@ Start-Setup
 
 # Clean
 Pop-Location
-Remove-Item $setupPath -Recurse -Force
 Pop-Location
