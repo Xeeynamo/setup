@@ -46,7 +46,7 @@ function Start-Setup {
     $global:setupPath = (Get-Location).Path
 
     Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
-        & ./scripts/block-telemetry.ps1
+        & "./scripts/block-telemetry.ps1"
     }
 
     Install-VisualStudioProfessional "./configs/dev.vsconfig"
