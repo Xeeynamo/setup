@@ -8,7 +8,6 @@
 2 putty
 2 filezilla
 2 dropbox
-2 teamviewer
 2 qbittorrent
 2 discord
 
@@ -43,15 +42,14 @@
 ####################
 # Tools
 ####################
-2 winmerge
+1 registrychangesview
+1 winmerge
 2 sysinternals
-2 poweriso
 2 win32diskimager
 2 cheatengine
 2 tor-browser
 2 windirstat
 2 bulkrenameutility
-3 Bitnami-XAMPP
 
 ####################
 # Development
