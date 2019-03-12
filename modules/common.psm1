@@ -99,7 +99,7 @@ function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$
 }
 
 function Install-UserProfile {
-    Get-ChildItem -Path './home' |
+    Get-ChildItem -Path "./home" |
         Select-Object -ExpandProperty Name |
-        Copy-Item -Path $_ -Destination '~/'
+        ForEach-Object { Copy-Item -Path "./home/$_" -Destination "~/" }
 }

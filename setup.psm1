@@ -5,6 +5,7 @@ function Start-Setup {
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
 
+    Install-UserProfile
     Install-StartLayout "./configs/start-layout.xml"
     Install-WindowsDeveloperMode
     Set-HidePeopleOnTaskbar $true
