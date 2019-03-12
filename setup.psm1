@@ -5,11 +5,21 @@ function Start-Setup {
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
 
+    Install-StartLayout "./configs/start-layout.xml"
+    Install-WindowsDeveloperMode
+    Set-HidePeopleOnTaskbar $true
+    Set-ShowPeopleOnTaskbar $false
+    Set-SmallButtonsOnTaskbar $true
+    Set-MultiMonitorTaskbarMode "2"
+    Set-DisableWindowsDefender $true
+    Set-DarkTheme $true
+    Set-OtherWindowsStuff
+    Disable-AdministratorSecurityPrompt
     Disable-UselessServices
-    Uninstall-StoreApps
     Disable-EasyAccessKeyboard
     Set-FolderViewOptions
     Disable-AeroShaking
+    Uninstall-StoreApps
 
     @(
         "Printing-XPSServices-Features"
@@ -24,14 +34,6 @@ function Start-Setup {
         "NetFx3"
         "Microsoft-Hyper-V-All"
     ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
-    
-    Install-WindowsDeveloperMode
-    Set-HidePeopleOnTaskbar $true
-    Set-ShowPeopleOnTaskbar $false
-    Set-SmallButtonsOnTaskbar $true
-    Set-MultiMonitorTaskbarMode "2"
-    Set-OtherWindowsStuff
-    Install-StartLayout "./configs/start-layout.xml"
 
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
