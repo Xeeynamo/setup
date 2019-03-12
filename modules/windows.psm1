@@ -52,7 +52,7 @@ function Set-DisableWindowsDefender([bool]$enable) {
 }
 
 function Set-DarkTheme([bool]$enable) {
-    Set-RegistryBool "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" !$enable
+    Set-RegistryBool "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" ($enable -eq -$false)
 }
 
 function Set-ColorTheme([string]$color) {
