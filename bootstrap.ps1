@@ -4,8 +4,12 @@ $setupPath = "./xeeynamo-setup"
 
 Push-Location "/"
 
+# Adjust the execution policy for a programming environment
+Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
+
 # Install chocolately, the minimum requirement
-Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Clean if necessary
 if (Test-Path -Path $setupPath) {
