@@ -1,3 +1,21 @@
+function Install-WindowsFeature($feature) {
+    $featureState = Get-WindowsOptionalFeature -Online -FeatureName $feature
+    if ($feature -ne "Enabled") {
+        Enable-WindowsOptionalFeature -Online -FeatureName $feature -NoRestart
+    }
+}
+
+function Install-LinuxSubsystem() {
+    Install-WindowsFeature Microsoft-Windows-Subsystem-Linux
+}
+
+function Install-Ubuntu() {
+    Install-LinuxSubsystem
+    Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+    Add-AppxPackage -Path .\Ubuntu.appx
+    Remove-Item -Path .\Ubuntu.appx -Force
+}
+
 function Install-StartLayout([string]$fileName) {
     Import-StartLayout -LayoutPath $fileName -MountPath $env:SystemDrive\
 

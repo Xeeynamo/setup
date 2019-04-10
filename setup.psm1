@@ -20,6 +20,7 @@ function Start-Setup {
     Set-FolderViewOptions
     Disable-AeroShaking
     Uninstall-StoreApps
+    Install-Ubuntu
 
     @(
         "Printing-XPSServices-Features"
