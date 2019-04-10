@@ -79,27 +79,24 @@ function Invoke-TemporaryZipDownload([string]$name, [string]$uri, [ScriptBlock]$
     Remove-Item -Path $outDir -Recurse -Force
 }
 
-function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$action, [string]$outDir) {
-    if ($null -eq $outDir) {
-        $outDir = Join-Path $tempDir $name
-    
-        New-TempDirectory
-    
-        if (Test-Path -Path $outDir) {
-            Remove-Item $outDir -Recurse -Force
-        }
+function Invoke-TemporaryGitDownload([string]$name, [string]$uri, [ScriptBlock]$action) {
+    $outDir = Join-Path $tempDir $name
+
+    New-TempDirectory
+    if (Test-Path -Path $outDir) {
+        Remove-Item $outDir -Recurse -Force
     }
 
     & git clone $uri $outDir
 
     Push-Location $outDir
     $action.Invoke()
-    Remove-Item ".git" -Recurse -Force -IgnoreNonExistentPaths
+    Remove-Item ".git" -Recurse -Force
     Pop-Location
 }
 
 function Install-UserProfile {
-    Get-ChildItem -Path './home' |
+    Get-ChildItem -Path "./home" |
         Select-Object -ExpandProperty Name |
-        Copy-Item -Path $_ -Destination '~/'
+        ForEach-Object { Copy-Item -Path "./home/$_" -Destination "~/" }
 }

@@ -5,6 +5,7 @@ function Start-Setup {
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
 
+    Install-UserProfile
     Install-StartLayout "./configs/start-layout.xml"
     Install-WindowsDeveloperMode
     Set-HidePeopleOnTaskbar $true
@@ -46,7 +47,7 @@ function Start-Setup {
     $global:setupPath = (Get-Location).Path
 
     Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
-        & ./scripts/block-telemetry.ps1
+        & "./scripts/block-telemetry.ps1"
     }
 
     Install-VisualStudioProfessional "./configs/dev.vsconfig"

@@ -1,0 +1,15 @@
+# enable syntax highlight
+include "/usr/share/nano/*.nanorc"
+
+# set element fgcolor,bgcolor
+set titlecolor black,blue
+set statuscolor black,green
+set errorcolor black,red
+set selectedcolor black,magenta
+set numbercolor cyan
+set keycolor cyan
+set functioncolor green
+
+set linenumbers
+set tabsize 4
+set mouse
