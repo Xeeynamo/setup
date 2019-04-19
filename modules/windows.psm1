@@ -1,19 +1,27 @@
 function Install-WindowsFeature($feature) {
     $featureState = Get-WindowsOptionalFeature -Online -FeatureName $feature
     if ($feature -ne "Enabled") {
-        Enable-WindowsOptionalFeature -Online -FeatureName $feature -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName $feature -NoRestart | Out-Null
     }
 }
 
-function Install-LinuxSubsystem() {
-    Install-WindowsFeature Microsoft-Windows-Subsystem-Linux
+function Uninstall-WindowsFeature($feature) {
+    $featureState = Get-WindowsOptionalFeature -Online -FeatureName $feature
+    if ($feature -eq "Enabled") {
+        Disable-WindowsOptionalFeature -Online -FeatureName $feature -NoRestart | Out-Null
+    }
 }
 
 function Install-Ubuntu() {
-    Install-LinuxSubsystem
+    Install-WindowsFeature Microsoft-Windows-Subsystem-Linux
     Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
     Add-AppxPackage -Path .\Ubuntu.appx
     Remove-Item -Path .\Ubuntu.appx -Force
+}
+
+function Uninstall-Ubuntu() {
+    Uninstall-WindowsFeature Microsoft-Windows-Subsystem-Linux
+    Get-AppxPackage -Name CanonicalGroupLimited.Ubuntu18.04onWindows | Remove-AppxPackage
 }
 
 function Install-StartLayout([string]$fileName) {
