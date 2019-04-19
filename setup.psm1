@@ -31,10 +31,10 @@ function Start-Setup {
 
     @(
         "TelnetClient"
-        "Microsoft-Windows-Subsystem-Linux"
         "HypervisorPlatform"
         "NetFx3"
         "Microsoft-Hyper-V-All"
+        "Containers-DisposableClientVM" # Windows Sandbox
     ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
 
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
