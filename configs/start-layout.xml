@@ -8,19 +8,24 @@
           <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\computer.lnk" />
         </start:Group>
         <start:Group Name="Multimedia">
-          <start:DesktopApplicationTile Size="1x1" Column="6" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\GIMP 2.10.8.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\MusicBrainz Picard.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="4" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Outlook.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\foobar2000.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="6" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\GIMP 2.10.10.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\MusicBrainz Picard.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Word.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\K-Lite Codec Pack\Media Player Classic.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="3" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Adobe Premiere Pro CC 2019.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="2" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Adobe Audition CC 2019.lnk" />
           <start:Tile Size="1x1" Column="7" Row="1" AppUserModelID="Microsoft.Office.OneNote_8wekyb3d8bbwe!microsoft.onenoteim" />
           <start:DesktopApplicationTile Size="1x1" Column="1" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Adobe Illustrator CC 2019.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Adobe Audition CC 2019.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="4" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Adobe Media Encoder CC 2019.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Excel.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\OneNote 2016.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="5" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Audacity.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="4" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Mp3tag\Mp3tag.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\PowerPoint.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="0" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Adobe Photoshop CC 2019.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="4" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Mp3tag\Mp3tag.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="7" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Start Tor Browser.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="6" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\calibre 64bit - E-book Management\calibre 64bit - E-book management.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" />
@@ -37,7 +42,7 @@
           <start:DesktopApplicationTile Size="2x2" Column="6" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Node.js\Node.js.lnk" />
           <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Visual Studio 2019 Preview.lnk" />
           <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Axosoft, LLC\GitKraken.lnk" />
-          <start:DesktopApplicationTile Size="2x2" Column="4" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Unity 2018.3.8f1 (64-bit)\Unity.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="4" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Unity 2019.1.0f2 (64-bit)\Unity.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="6" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\IDA Pro\IDA Pro (64-bit).lnk" />
           <start:DesktopApplicationTile Size="2x2" Column="0" Row="6" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Resource Hacker\Resource Hacker.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="6" Row="1" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\JetBrains\JetBrains dotPeek 2018.3.4.lnk" />
@@ -46,30 +51,35 @@
         </start:Group>
         <start:Group Name="Utility">
           <start:DesktopApplicationTile Size="1x1" Column="7" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\FileZilla FTP Client\FileZilla.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Autoruns64.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="4" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\ScreenToGif.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="0" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\procexp64.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="7" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Image Writer\Win32DiskImager.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Performance Monitor.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="2" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\CPUID\CPU-Z\CPU-Z.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="1" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Procmon.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\perfmon.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="5" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Angry IP Scanner.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="3" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\GPU-Z.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Bulk Rename Utility\Bulk Rename Utility.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="6" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\KeePass 2.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="1" Row="1" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\CrystalDiskInfo.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Bulk Rename Utility\Bulk Rename Utility.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="2" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Autoruns64.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="0" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Core Temp.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="4" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Intel\Intel(R) Extreme Tuning Utility.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\WinDirStat\WinDirStat.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\AutoHotkey\AutoHotkey.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\GPU-Z.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Disk Cleanup.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\RegistryChangesView.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\qBittorrent\qBittorrent.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="4" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\WinMerge\WinMerge.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="6" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Notepad++.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\qBittorrent\qBittorrent.lnk" />
         </start:Group>
         <start:Group Name="Entertainment">
           <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\ds4windows.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="0" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Synthesia.lnk" />
-          <start:DesktopApplicationTile Size="1x1" Column="1" Row="1" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Ableton Live 10 Suite.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Synthesia.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="1" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Ableton Live 10 Suite.lnk" />
           <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Steam\Steam.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Hauptwerk Virtual Pipe Organ\Hauptwerk.lnk" />
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\CEMU.lnk" />
         </start:Group>
       </defaultlayout:StartLayout>
     </StartLayoutCollection>
