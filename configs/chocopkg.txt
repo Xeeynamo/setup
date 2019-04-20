@@ -17,6 +17,7 @@
 1 spotify
 2 k-litecodecpackfull
 2 audacity
+3 screentogif
 3 calibre
 3 mp3tag
 3 picard
