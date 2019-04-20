@@ -5,7 +5,6 @@
 1 logitech-options
 1 winrar
 1 keepass
-2 putty
 2 filezilla
 2 dropbox
 2 qbittorrent
