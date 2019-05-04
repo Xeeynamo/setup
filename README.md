@@ -23,6 +23,7 @@ From a powershell console, as an Administrator, just launch the following comman
 * Install a bunch of softwares
 * Install a customized Start layout
 * Restore a back-up of home folder
+* Install foobar2000 plugins
 
 # To do
 

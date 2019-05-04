@@ -1,0 +1,29 @@
+# Various DSP effects (last update 2019-04-13)
+https://www.foobar2000.org/getcomponent/bb6c0b2249e5fbcd63650f0eb37692e0/f4ef49c3eebcb757c0fe11d988b4da69/foo_dsp_effect.fb2k-component
+
+# Play MIDI
+https://kode54.net/fb2k/foo_midi.fb2k-component
+
+# Play ADPCM
+https://kode54.net/fb2k/foo_adpcm.fb2k-component
+
+# Play SPC (Super Famicon / SNES)
+https://kode54.net/fb2k/foo_snesapu.fb2k-component
+
+# Play GSF (Gameboy Advance)
+https://kode54.net/fb2k/foo_input_gsf.fb2k-component
+
+# Play 2SF (Nintendo DS)
+https://kode54.net/fb2k/foo_input_vio2sf.fb2k-component
+
+# Play PSF (Playstation)
+https://kode54.net/fb2k/foo_psf.fb2k-component
+
+# Play GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, and VGM
+https://kode54.net/fb2k/foo_gep.fb2k-component
+
+# Play MOD, S3M, XM, IT, STM, 669, PTM, PSM, MTM, DSM, ASYLUM AMF, UMX, J2B
+https://kode54.net/fb2k/foo_dumb.fb2k-component
+
+# Play DTS
+https://kode54.net/fb2k/foo_input_dts.fb2k-component

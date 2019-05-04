@@ -41,6 +41,8 @@ function Start-Setup {
     Install-ChocoPackages $chocopkgs 1
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
+
+    Install-Foobar2000Plugins "./configs/foobar2000plugins.txt"
     
     Get-ChildItem .\modules\common.psm1 | Import-Module -Force
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
@@ -80,4 +82,12 @@ function Start-Setup {
 
 
     Remove-TempDirectory
+}
+
+function Install-Foobar2000Plugins([string]$configFileName) {
+    Get-Content $configFileName |
+        Where-Object { $_[0] -ne '#' -and $_.Length -gt 0 } |
+        ForEach-Object {
+            Install-Foobar2000PluginFromUrl $_
+        }
 }
