@@ -28,8 +28,11 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 # Enter inside the repository and invoke the real set-up process
 Push-Location $setupPath
 Import-Module '.\setup.psm1' -Force
-Start-Setup
 
-# Clean
-Pop-Location
-Pop-Location
+if ($debug -ne $true) {
+    Start-Setup
+
+    # Clean
+    Pop-Location
+    Pop-Location
+}

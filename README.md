@@ -10,6 +10,10 @@ From a powershell console, as an Administrator, just launch the following comman
 
 `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Xeeynamo/setup/master/bootstrap.ps1'))`
 
+Or if you want to avoid to launch the set-up (mostly for debugging purpose), launch the following command:
+
+`Set-ExecutionPolicy Bypass -Scope Process -Force; $debug=$true; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Xeeynamo/setup/master/bootstrap.ps1'))`
+
 # Features
 
 * Disable useless Windows services

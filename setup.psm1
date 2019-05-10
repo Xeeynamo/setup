@@ -1,8 +1,8 @@
+Get-ChildItem .\modules\*.psm1 | Import-Module -Force
+    
 function Start-Setup {
     Write-Output "Beginning the set-up"
 
-    Get-ChildItem .\modules\common.psm1 | Import-Module -Force
-    Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
 
     Install-UserProfile
