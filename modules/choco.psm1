@@ -29,12 +29,36 @@ function Get-ChocoPackages([string]$fileName) {
         }
 }
 
+function Get-IsChocoPackageInstalled([string]$packageName) {
+    (choco list --lo | Where-Object { $_.Contains("$packageName ") }).Count -gt 0 
+}
+
+function Install-ChocoPackage([string]$packageName, [switch]$force) {
+    if ($force) {
+        & choco install $packageName --confirm --limit-output --force
+    }
+    else {
+        & choco install $packageName --confirm --limit-output
+    }
+}
+
+function Install-ChocoPackageIfNotInstalled([string]$packageName) {
+    $isInstalled = Get-IsChocoPackageInstalled $packageName
+    if ($isInstalled -eq $false) {
+        Install-ChocoPackage $packageName
+    }
+}
+
+function Uninstall-ChocoPackage([string]$packageName) {
+    & choco uninstall $packageName --confirm --limit-output
+}
+
 function Install-ChocoPackages([ChocoPackage[]]$packages, [string]$priority) {
     $packages |
         Where-Object { $_.Priority -eq $priority } |
         ForEach-Object {
             Write-Host "Installing" $_.Name
-            & choco install $_.Name --confirm --limit-output
+            Install-ChocoPackage $_.Name
         }
 
     # Reset-PathEnvironment
