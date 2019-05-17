@@ -1,5 +1,5 @@
 Get-ChildItem .\modules\*.psm1 | Import-Module -Force
-    
+
 function Start-Setup {
     Write-Output "Beginning the set-up"
 
@@ -43,7 +43,7 @@ function Start-Setup {
     Install-ChocoPackages $chocopkgs 3
 
     Install-Foobar2000Plugins "./configs/foobar2000plugins.txt"
-    
+
     Get-ChildItem .\modules\common.psm1 | Import-Module -Force
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
@@ -52,7 +52,11 @@ function Start-Setup {
         & "./scripts/block-telemetry.ps1"
     }
 
-    Install-VisualStudioProfessional "./configs/dev.vsconfig"
+    Install-VisualStudioProfessional (Join-VisualStudioConfigurations @(
+        "./configs/visualstudio/core.vsconfig",
+        "./configs/visualstudio/dotnet.vsconfig",
+        "./configs/visualstudio/cplusplus.vsconfig"
+    ))
 
     # Install Dracula theme for Visual Studio Code
     Get-DownloadTemporaryFile "dracula.vsix" "https://github.com/dracula/visual-studio-code/releases/download/v2.16.0/dracula.vsix" {
