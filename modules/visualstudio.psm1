@@ -1,3 +1,11 @@
+$pathVisualStudio2019Community = "./installers/vs_community__1395674124.1548241381.exe"
+$pathVisualStudio2019Professional = "./installers/vs_professional__1395674124.1548241381.exe"
+$pathVisualStudio2019Enterprise = "./installers/vs_enterprise__1395674124.1548241381.exe"
+
+function Install-VisualStudio([string]$installerPath, [string[]]$components) {
+    & $installerPath --wait --passive --norestart ($components | ForEach-Object { @("--add", $_) })
+}
+
 function Edit-VisualStudioConfiguration([string]$configPath) {
     $components = Get-VisualStudioComponentsFromConfiguration $configPath
     & $pathVisualStudio2019Enterprise export --config $configPath ($components | ForEach-Object { @("--add", $_) })
@@ -21,6 +29,14 @@ function Join-AllVisualStudioConfigurations([string[]]$configDir) {
     Join-VisualStudioConfigurations (Get-ChildItem -Path "." | Select-Object -ExpandProperty Name | Where-Object { $_.Contains(".vsconfig") })
 }
 
+function Install-VisualStudioCommunity([string]$components) {
+    Install-VisualStudio $pathVisualStudio2019Community $components
+}
+
 function Install-VisualStudioProfessional([string]$components) {
-    & "./installers/vs_professional.exe" --wait --passive --norestart ($components | ForEach-Object { @("--add", $_) })
+    Install-VisualStudio $pathVisualStudio2019Professional $components
+}
+
+function Install-VisualStudioEnterprise([string]$components) {
+    Install-VisualStudio $pathVisualStudio2019Enterprise $components
 }
