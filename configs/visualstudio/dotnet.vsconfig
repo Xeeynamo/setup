@@ -44,15 +44,17 @@
     "Microsoft.Net.ComponentGroup.TargetingPacks.Common",
     "Microsoft.VisualStudio.Component.IntelliTrace.FrontEnd",
     "Microsoft.VisualStudio.Component.DiagnosticTools",
-    "Microsoft.VisualStudio.Component.EntityFramework",
     "Microsoft.VisualStudio.Component.LiveUnitTesting",
     "Microsoft.VisualStudio.Component.AspNet45",
     "Microsoft.VisualStudio.Component.AppInsights.Tools",
+    "Component.Microsoft.VisualStudio.LiveShare",
     "Microsoft.Net.Core.Component.SDK.2.2",
     "Microsoft.NetCore.ComponentGroup.DevelopmentTools.2.2",
     "Microsoft.NetCore.ComponentGroup.Web.2.2",
     "Microsoft.VisualStudio.Workload.NetWeb",
+    "Microsoft.VisualStudio.Component.ManagedDesktop.Prerequisites",
     "Microsoft.VisualStudio.Component.FSharp.Desktop",
+    "Microsoft.VisualStudio.Workload.ManagedDesktop",
     "Microsoft.VisualStudio.Workload.NetCoreTools"
   ]
 }
