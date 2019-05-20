@@ -1,6 +1,6 @@
-$pathVisualStudio2019Community = "./installers/vs_community__1395674124.1548241381.exe"
-$pathVisualStudio2019Professional = "./installers/vs_professional__1395674124.1548241381.exe"
-$pathVisualStudio2019Enterprise = "./installers/vs_enterprise__1395674124.1548241381.exe"
+$pathVisualStudio2019Community = "./installers/vs_community*.exe"
+$pathVisualStudio2019Professional = "./installers/vs_professional*.exe"
+$pathVisualStudio2019Enterprise = "./installers/vs_enterprise*.exe"
 
 function Install-VisualStudio([string]$installerPath, [string[]]$components) {
     & $installerPath --wait --passive --norestart ($components | ForEach-Object { @("--add", $_) })
