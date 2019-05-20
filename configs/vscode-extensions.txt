@@ -1,0 +1,11 @@
+ms-vscode.csharp
+ms-vscode.cpptools
+ms-vscode.PowerShell
+MS-vsliveshare.vsliveshare
+ms-vscode.vs-keybindings
+DavidAnson.vscode-markdownlint
+PeterJausovec.vscode-docker
+fabiospampinato.vscode-todo-plus
+VisualStudioExptTeam.vscodeintellicode
+dracula-theme.theme-dracula
+ghgofort.neon-vommit

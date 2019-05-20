@@ -43,6 +43,7 @@ function Start-Setup {
     Install-ChocoPackages $chocopkgs 3
 
     Install-Foobar2000Plugins "./configs/foobar2000plugins.txt"
+    Install-VsCodeExtensions "./configs/vscode-extensions.txt"
 
     Get-ChildItem .\modules\common.psm1 | Import-Module -Force
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
@@ -58,8 +59,6 @@ function Start-Setup {
         "./configs/visualstudio/cplusplus.vsconfig"
     ))
 
-    # Install Dracula theme for Visual Studio Code
-    Install-VsCodeExtension "dracula.vsix" "https://github.com/dracula/visual-studio-code/releases/download/v2.18.0/dracula.vsix"
 
     # Install Dracula theme and configs for Notepad++
     Get-DownloadFile "~\AppData\Roaming\Notepad++\themes\Dracula.xml" "https://raw.githubusercontent.com/dracula/notepad-plus-plus/master/Dracula.xml"
@@ -82,7 +81,6 @@ function Start-Setup {
         (& ./colortool "-d" "-b" "-x" $termColorsPath) | Out-Null
     }
 
-
     Remove-TempDirectory
 }
 
@@ -91,5 +89,12 @@ function Install-Foobar2000Plugins([string]$configFileName) {
         Where-Object { $_[0] -ne '#' -and $_.Length -gt 0 } |
         ForEach-Object {
             Install-Foobar2000PluginFromUrl $_
+        }
+}
+function Install-VsCodeExtensions([string]$configFileName) {
+    Get-Content $configFileName |
+        Where-Object { $_[0] -ne '#' -and $_.Length -gt 0 } |
+        ForEach-Object {
+            Install-VsCodeExtension $_
         }
 }
