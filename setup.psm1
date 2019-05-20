@@ -59,7 +59,7 @@ function Start-Setup {
     ))
 
     # Install Dracula theme for Visual Studio Code
-    Install-VsCodeExtension "dracula.vsix" "https://github.com/dracula/visual-studio-code/releases/download/v2.16.0/dracula.vsix"
+    Install-VsCodeExtension "dracula.vsix" "https://github.com/dracula/visual-studio-code/releases/download/v2.18.0/dracula.vsix"
 
     # Install Dracula theme and configs for Notepad++
     Get-DownloadFile "~\AppData\Roaming\Notepad++\themes\Dracula.xml" "https://raw.githubusercontent.com/dracula/notepad-plus-plus/master/Dracula.xml"
