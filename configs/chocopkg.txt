@@ -17,6 +17,7 @@
 1 spotify
 2 k-litecodecpackfull
 2 audacity
+2 vlc
 3 screentogif
 3 calibre
 3 mp3tag
@@ -67,6 +68,7 @@
 2 fiddler
 2 redis-desktop-manager
 2 docker-cli
+2 virtualbox
 3 unity
 
 ####################
