@@ -39,6 +39,7 @@
 2 coretemp
 2 intel-xtu
 2 crystaldiskinfo
+2 batteryinfoview
 
 ####################
 # Tools
