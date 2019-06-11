@@ -1,4 +1,5 @@
 Get-ChildItem .\modules\*.psm1 | Import-Module -Force
+$global:setupPath = (Get-Location).Path
 
 function Start-Setup {
     Write-Output "Beginning the set-up"
@@ -65,7 +66,10 @@ function Start-Setup {
     Copy-Item ".\configs\notepadplusplus\config.xml" "~\AppData\Roaming\Notepad++\"
 
     # Install Dracula theme for all terminals
-    Invoke-TemporaryZipDownload "colortool" "https://github.com/Microsoft/console/releases/download/1810.02002/ColorTool.zip" {
+    Invoke-TemporaryZipDownload "colortool" "https://github.com/microsoft/terminal/releases/download/1904.29002/ColorTool.zip" {
+        $termColorsPath = Join-Path $global:setupPath "configs/Dracula-ColorTool.itermcolors"
+        (& ./colortool "-d" "-b" "-x" $termColorsPath)
+        
         Set-PSReadlineOption -Color @{
             "Command" = [ConsoleColor]::Green
             "Parameter" = [ConsoleColor]::Gray
@@ -76,9 +80,6 @@ function Start-Setup {
             "Type" = [ConsoleColor]::Cyan
             "Comment" = [ConsoleColor]::DarkCyan
         }
-
-        $termColorsPath = Join-Path $global:setupPath "configs/Dracula-ColorTool.itermcolors"
-        (& ./colortool "-d" "-b" "-x" $termColorsPath) | Out-Null
     }
 
     Remove-TempDirectory
