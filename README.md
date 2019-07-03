@@ -1,10 +1,14 @@
-# About
+# Set-up from a fresh install, with just one line of code
+
+## About
 
 This is a public repository of a script to set-up, from a fresh Windows 10 installation, a development or multimedia production environment with just a single command.
 
-Of course this personal repository is configured to be adapter on my specific needs, but you are free to fork it and customise it as you wish.
+It will also tweak the UI, disable telemetry, uninstall pre-installed Windows apps and install all your favourite softwares.
 
-# Set-up
+Of course this personal repository is configured to be adapter on my specific needs, but you are free to fork it and [customize it](customization.md) as you wish.
+
+## Set-up
 
 From a powershell console, as an Administrator, just launch the following command:
 
@@ -14,7 +18,11 @@ Or if you want to avoid to launch the set-up (mostly for debugging purpose), lau
 
 `Set-ExecutionPolicy Bypass -Scope Process -Force; $debug=$true; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Xeeynamo/setup/master/bootstrap.ps1'))`
 
-# Features
+## Customization
+
+Please refer to [customization](customization.md) to discover how to configure your personal set-up script.
+
+## Features
 
 * Disable useless Windows services
 * Remove the damn pre-installed Windows Apps (addio Candy Crush Saga)
@@ -28,11 +36,12 @@ Or if you want to avoid to launch the set-up (mostly for debugging purpose), lau
 * Install a customized Start layout
 * Restore a back-up of home folder
 * Install foobar2000 plugins
+* Install Visual Studio Code plugins
 
-# To do
+## To do
 
 * Make the script more configurable
+* Install backed-up fonts
 * Set-up a private repository that restores keys, licenses and personal information
 * Create a back-up script that upload the current settings into the private backup repository
-* Script that upgrade all the installed softwares
-* Script that revert the changes made by this set-up script
+* Revert the changes made by the set-up script
