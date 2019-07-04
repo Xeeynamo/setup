@@ -24,19 +24,21 @@ Please refer to [customization](customization.md) to discover how to configure y
 
 ## Features
 
-* Disable useless Windows services
-* Remove the damn pre-installed Windows Apps (addio Candy Crush Saga)
+* Disable the specified Windows services
+* Remove the damn pre-installed Windows Apps (goodbye Candy Crush Saga)
 * Enable Developer Mode
-* Make the taskbar decent for multi-monitor configurations
+* Tweak the taskbar for multi-monitor configurations
 * Remove XPS and Fax services
 * Enable Telnet, .Net Framework 3.5, Hyper-V and Linux Subsystem
+* Install the latest Ubuntu LTS using WSL 1.0
 * Disable telemetry
-* Install Dracula theme
-* Install a bunch of softwares
-* Install a customized Start layout
+* Install Dracula theme on both Command Prompt and PowerShell
+* Install your software from Chocolately in background
+* Restore your backed-up Start layout
 * Restore a back-up of home folder
 * Install foobar2000 plugins
-* Install Visual Studio Code plugins
+* Install Visual Studio Code extensions
+* Install the latest version of Visual Studio, silently
 
 ## To do
 
