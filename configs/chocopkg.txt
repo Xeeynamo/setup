@@ -23,6 +23,7 @@
 3 mp3tag
 3 picard
 3 gimp
+3 obs-studio
 
 ####################
 # Entertainment
@@ -77,6 +78,7 @@
 ####################
 1 notepadplusplus
 1 vscode
+3 androidstudio
 # 0 vscode-csharp
 # 0 visualstudio2017professional
 
@@ -92,5 +94,6 @@
 ####################
 1 mingw
 2 python2
-2 jdk11
+2 openjdk
+3 android-sdk
 3 nodejs
