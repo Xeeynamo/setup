@@ -93,7 +93,8 @@
 # SDK
 ####################
 1 mingw
+1 nodejs
+1 yarn
 2 python2
 2 openjdk
 3 android-sdk
-3 nodejs
