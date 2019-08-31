@@ -47,6 +47,16 @@ function Set-RegistryBool([string]$path, [string]$key, [bool]$enable) {
     Set-RegistryValue $path $key $value
 }
 
+function Remove-RegistryKey([string]$path, [string]$key) {
+    Remove-ItemProperty -Path $path -Name $key -Force
+}
+
+function Remove-RegistryFolder([string]$path) {
+    if (Test-Path $path) {
+        Remove-Item -Path $path -Recurse -Force
+    }
+}
+
 function Install-WindowsDeveloperMode {
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" "AllowDevelopmentWithoutDevLicense" $true
 }
@@ -92,11 +102,15 @@ function Disable-AdministratorSecurityPrompt() {
 
     # Disabling this policy disables secure desktop prompting. All credential or consent prompting will occur on the interactive user's desktop.
     # https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/9ad50fd3-4d8d-4870-9f5b-978ce292b9d8
-    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "PromptOnSecureDesktop " "0"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "PromptOnSecureDesktop" "0"
 
     # This option allows the Consent Admin to perform an operation that requires elevation without consent or credentials.
     # https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/341747f5-6b5d-4d30-85fc-fa1cc04038d4
-    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "ConsentPromptBehaviorAdmin " "0"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "ConsentPromptBehaviorAdmin" "0"
+}
+
+function Disable-BingSearchInStartMenu {
+    Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "BingSearchEnabled" "0"
 }
 
 function Set-OtherWindowsStuff {
@@ -108,4 +122,9 @@ function Set-OtherWindowsStuff {
     Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarSizeMove" "0"
     Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowSuperHidden" "1"
     Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowSuperHidden" "1"
+}
+
+function Remove-3dObjectsFolder {
+    Remove-RegistryFolder "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+    Remove-RegistryFolder "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 }

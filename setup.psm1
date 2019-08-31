@@ -19,6 +19,7 @@ function Start-Setup {
     Set-DisableWindowsDefender $true
     Set-DarkTheme $true
     Set-OtherWindowsStuff
+    Remove-3dObjectsFolder
     Disable-AdministratorSecurityPrompt
     Disable-UselessServices
     Disable-EasyAccessKeyboard
