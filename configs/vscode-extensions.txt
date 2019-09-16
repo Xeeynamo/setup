@@ -1,9 +1,11 @@
 ms-vscode.csharp
 ms-vscode.cpptools
-ms-vscode.PowerShell
+ms-vscode.go
+ms-vscode.powershell
 MS-vsliveshare.vsliveshare
 ms-vscode.vs-keybindings
-DavidAnson.vscode-markdownlint
+davidanson.vscode-markdownlint
+ms-vscode-remote.remote-wsl
 PeterJausovec.vscode-docker
 fabiospampinato.vscode-todo-plus
 VisualStudioExptTeam.vscodeintellicode
