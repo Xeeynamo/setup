@@ -81,6 +81,19 @@ function Set-MultiMonitorTaskbarMode($value) {
     Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "MMTaskbarMode " $value
 }
 
+function Set-DisableLockScreen($value) {
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization" "NoLockScreen " $value
+}
+
+function Set-DisableAeroShake($value) {
+    Set-RegistryBool "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer" "NoWindowMinimizingShortcuts " $value
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer" "NoWindowMinimizingShortcuts " $value
+}
+
+function Set-EnableLongPathsForWin32($value) {
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\FileSystem" "LongPathsEnabled " $value
+}
+
 function Set-DisableWindowsDefender([bool]$enable) {
     # Disables Windows Defender. Also impacts third-party antivirus software and apps.
     # https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware

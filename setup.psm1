@@ -18,6 +18,9 @@ function Start-Setup {
     Set-MultiMonitorTaskbarMode "2"
     Set-DisableWindowsDefender $true
     Set-DarkTheme $true
+    Set-DisableLockScreen $true
+    Set-DisableAeroShake $true
+    Set-EnableLongPathsForWin32 $true
     Set-OtherWindowsStuff
     Remove-3dObjectsFolder
     Disable-AdministratorSecurityPrompt
