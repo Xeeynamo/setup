@@ -70,15 +70,12 @@
 2 fiddler
 2 redis-desktop-manager
 2 docker-cli
-2 virtualbox
-3 unity
 
 ####################
 # IDE and editors
 ####################
 1 notepadplusplus
 1 vscode
-3 androidstudio
 # 0 vscode-csharp
 # 0 visualstudio2017professional
 
