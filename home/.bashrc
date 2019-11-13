@@ -1,3 +1,6 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias gh='git h'
 alias ghs='git h -5'
 alias gc='git commit -m'
