@@ -10,6 +10,4 @@ systemctl enable sshd
 systemctl enable dhcpcd
 useradd -m xeeynamo
 usermod -aG wheel xeeynamo
-passwd
-passwd xeeynamo
 exit
