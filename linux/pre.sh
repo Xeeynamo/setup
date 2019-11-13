@@ -9,6 +9,6 @@ mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi
 pacstrap /mnt base linux linux-firmware grub efibootmgr base-devel git nano dhcpcd openssh systemd ufw wget curl
 genfstab -U /mnt >> /mnt/etc/fstab
-curl https://raw.githubusercontent.com/Xeeynamo/setup/master/setup/setup.sh | arch-chroot /mnt
+curl https://raw.githubusercontent.com/Xeeynamo/setup/master/linux/setup.sh | arch-chroot /mnt
 umount -R /mnt
 reboot

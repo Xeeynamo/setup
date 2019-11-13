@@ -51,4 +51,4 @@ Please refer to [customization](customization.md) to discover how to configure y
 
 ## Bonus: Install Arch Linux
 
-Just launch `curl https://raw.githubusercontent.com/Xeeynamo/setup/master/setup/setup.sh | sh`
+Just launch `curl https://raw.githubusercontent.com/Xeeynamo/setup/master/linux/pre.sh | sh`
