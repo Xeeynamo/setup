@@ -47,3 +47,8 @@ Please refer to [customization](customization.md) to discover how to configure y
 * Set-up a private repository that restores keys, licenses and personal information
 * Create a back-up script that upload the current settings into the private backup repository
 * Revert the changes made by the set-up script
+
+
+## Bonus: Install Arch Linux
+
+Just launch `curl https://raw.githubusercontent.com/Xeeynamo/setup/master/setup/setup.sh | sh`
