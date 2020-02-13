@@ -10,4 +10,8 @@ systemctl enable sshd
 systemctl enable dhcpcd
 useradd -m xeeynamo
 usermod -aG wheel xeeynamo
+
+# Disable automatic core dumps
+echo 'kernel.core_pattern=|/bin/false' > /etc/sysctl.d/50-coredump.conf
+
 exit
