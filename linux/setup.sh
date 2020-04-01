@@ -14,4 +14,7 @@ usermod -aG wheel xeeynamo
 # Disable automatic core dumps
 echo 'kernel.core_pattern=|/bin/false' > /etc/sysctl.d/50-coredump.conf
 
+# Add wheel group to sudoers
+echo '%wheel        ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers
+
 exit
