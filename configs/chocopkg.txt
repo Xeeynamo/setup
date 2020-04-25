@@ -6,7 +6,6 @@
 1 winrar
 1 keepass
 2 filezilla
-2 dropbox
 2 qbittorrent
 2 discord
 
@@ -22,24 +21,21 @@
 3 calibre
 3 mp3tag
 3 picard
-3 gimp
 3 obs-studio
 
 ####################
 # Entertainment
 ####################
 2 ds4windows
-3 cemu
 3 steam
 
 ####################
 # Monitoring
 ####################
-2 cpu-z
-2 gpu-z
 2 coretemp
 2 intel-xtu
 2 crystaldiskinfo
+2 crystaldiskmark
 2 batteryinfoview
 
 ####################
@@ -50,34 +46,29 @@
 2 sysinternals
 2 win32diskimager
 2 cheatengine
-2 tor-browser
 2 windirstat
 2 bulkrenameutility
 
 ####################
 # Development
 ####################
+1 git
 1 git-lfs
 1 curl
 1 cmake
-1 poshgit
 1 gitkraken
 2 dependencywalker
 2 reshack
 2 postman
 2 angryip
-2 dotpeek
 2 fiddler
-2 redis-desktop-manager
-2 docker-cli
+#2 docker-cli
 
 ####################
 # IDE and editors
 ####################
 1 notepadplusplus
 1 vscode
-# 0 vscode-csharp
-# 0 visualstudio2017professional
 
 ####################
 # Runtime
@@ -92,6 +83,4 @@
 1 mingw
 1 nodejs
 1 yarn
-2 python2
-2 openjdk
-3 android-sdk
+2 python
