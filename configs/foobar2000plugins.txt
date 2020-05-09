@@ -1,29 +1,44 @@
 # Various DSP effects (last update 2019-04-13)
-https://www.foobar2000.org/getcomponent/bb6c0b2249e5fbcd63650f0eb37692e0/f4ef49c3eebcb757c0fe11d988b4da69/foo_dsp_effect.fb2k-component
+https://www.foobar2000.org/getcomponent/6ced994cc5bd19d377b800a4655f6890/6fe687575a302b93fcd72944fedd7667/foo_dsp_effect.fb2k-component
+
+# Play basically every videogame music format
+https://kode54.keybase.pub/foobar2000/foo_input_vgmstream.fb2k-component?dl=1
 
 # Play MIDI
-https://kode54.net/fb2k/foo_midi.fb2k-component
-
-# Play ADPCM
-https://kode54.net/fb2k/foo_adpcm.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_midi.fb2k-component?dl=1
 
 # Play SPC (Super Famicon / SNES)
-https://kode54.net/fb2k/foo_snesapu.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_snesapu.fb2k-component?dl=1
 
 # Play GSF (Gameboy Advance)
-https://kode54.net/fb2k/foo_input_gsf.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_input_gsf.fb2k-component?dl=1
 
 # Play 2SF (Nintendo DS)
-https://kode54.net/fb2k/foo_input_vio2sf.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_input_vio2sf.fb2k-component?dl=1
 
 # Play PSF (Playstation)
-https://kode54.net/fb2k/foo_psf.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_psf.fb2k-component?dl=1
 
 # Play GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, and VGM
-https://kode54.net/fb2k/foo_gep.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_gep.fb2k-component?dl=1
 
-# Play MOD, S3M, XM, IT, STM, 669, PTM, PSM, MTM, DSM, ASYLUM AMF, UMX, J2B
-https://kode54.net/fb2k/foo_dumb.fb2k-component
+# Sega Saturn SSF, DSF
+https://kode54.keybase.pub/foobar2000/foo_input_ht.fb2k-component?dl=1
 
 # Play DTS
-https://kode54.net/fb2k/foo_input_dts.fb2k-component
+https://kode54.keybase.pub/foobar2000/foo_input_dts.fb2k-component?dl=1
+
+# AC3
+https://kode54.keybase.pub/foobar2000/foo_ac3.fb2k-component?dl=1
+
+# MSDOS
+https://kode54.keybase.pub/foobar2000/foo_input_adplug.fb2k-component?dl=1
+
+# FDK-AAC
+https://kode54.keybase.pub/foobar2000/foo_pd_aac.fb2k-component?dl=1
+
+# HDCD
+https://kode54.keybase.pub/foobar2000/foo_hdcd.fb2k-component?dl=1
+
+# AHX, HVL
+https://kode54.keybase.pub/foobar2000/foo_input_hvl.fb2k-component?dl=1
