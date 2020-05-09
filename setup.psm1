@@ -30,7 +30,6 @@ function Start-Setup {
     Disable-UselessServices
     Disable-EasyAccessKeyboard
     Set-FolderViewOptions
-    Disable-AeroShaking
     Uninstall-StoreApps
     Install-Ubuntu
 
