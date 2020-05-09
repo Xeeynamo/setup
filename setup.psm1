@@ -9,6 +9,7 @@ function Start-Setup {
     # Make sure that Git Bash uses colors on Windows
     [System.Environment]::SetEnvironmentVariable("FORCE_COLOR", "true", "Machine")
 
+    Set-ShellFolders
     Install-UserProfile
     Install-StartLayout "./configs/start-layout.xml"
     Install-WindowsDeveloperMode
@@ -94,6 +95,15 @@ function Start-Setup {
     }
 
     Remove-TempDirectory
+}
+
+function Set-ShellFolders {
+    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "Desktop" "D:\Xeeynamo\Desktop"
+    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Music" "D:\Xeeynamo\Music"
+    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Pictures" "D:\Xeeynamo\Pictures"
+    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Video" "D:\Xeeynamo\Video"
+    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "Personal" "D:\Xeeynamo\Documents"
+    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "{374DE290-123F-4565-9164-39C4925E467B}" "D:\Xeeynamo\Downloads"
 }
 
 function Install-Foobar2000Plugins([string]$configFileName) {
