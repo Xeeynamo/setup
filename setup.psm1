@@ -6,7 +6,7 @@ function Start-Setup {
 
     $global:setupPath = (Get-Location).Path
 
-    # Make sure that Git Bash does use colors on Windows
+    # Make sure that Git Bash uses colors on Windows
     [System.Environment]::SetEnvironmentVariable("FORCE_COLOR", "true", "Machine")
 
     Install-UserProfile
