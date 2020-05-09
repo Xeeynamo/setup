@@ -46,6 +46,10 @@ function Set-RegistryValue([string]$path, [string]$key, $value) {
     reg add $path /t REG_DWORD /f /v $key /d $value
 }
 
+function Set-RegistryString([string]$path, [string]$key, $value) {
+    reg add $path /t REG_SZ /f /v $key /d $value
+}
+
 function Set-RegistryBool([string]$path, [string]$key, [bool]$enable) {
     $value = "0"
     if ($true -eq $enable) {
@@ -164,30 +168,30 @@ function Remove-3dObjectsFolder {
 }
 
 function Disable-IntelPowerThrottling {
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyDeviceIDs" "1"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyDeviceIDsRetroactive" "1"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyInstanceIDs" "1"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyInstanceIDsRetroactive" "0"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyDeviceIDs" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyDeviceIDsRetroactive" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyInstanceIDs" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyInstanceIDsRetroactive" "0"
     
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "1" "*INT3400"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "2" "*INT3402"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "3" "*INT3403"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "4" "*INT3404"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "5" "*INT3407"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "6" "*INT3409"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "7" "PCI\VEN_8086&DEV_1603&CC_1180"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "8" "PCI\VEN_8086&DEV_1903&CC_1180"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "9" "PCI\VEN_8086&DEV_8A03&CC_1180"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "10" "PCI\VEN_8086&DEV_9C24&CC_1180"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "1" "*INT3400"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "2" "*INT3402"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "3" "*INT3403"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "4" "*INT3404"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "5" "*INT3407"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "6" "*INT3409"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "7" "PCI\VEN_8086&DEV_1603&CC_1180"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "8" "PCI\VEN_8086&DEV_1903&CC_1180"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "9" "PCI\VEN_8086&DEV_8A03&CC_1180"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "10" "PCI\VEN_8086&DEV_9C24&CC_1180"
     
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "1" "ACPI\VEN_INT&DEV_3403"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "2" "ACPI\INT3403"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "3" "*INT3403"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "4" "ACPI\VEN_INT&DEV_3400"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "5" "ACPI\INT3400"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "6" "*INT3400"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "7" "PCI\VEN_8086&DEV_1903&SUBSYS_07BE1028&REV_05"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "8" "PCI\VEN_8086&DEV_1903&SUBSYS_07BE1028"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "9" "PCI\VEN_8086&DEV_1903&CC_118000"
-    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "10" "PCI\VEN_8086&DEV_1903&CC_1180"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "1" "ACPI\VEN_INT&DEV_3403"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "2" "ACPI\INT3403"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "3" "*INT3403"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "4" "ACPI\VEN_INT&DEV_3400"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "5" "ACPI\INT3400"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "6" "*INT3400"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "7" "PCI\VEN_8086&DEV_1903&SUBSYS_07BE1028&REV_05"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "8" "PCI\VEN_8086&DEV_1903&SUBSYS_07BE1028"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "9" "PCI\VEN_8086&DEV_1903&CC_118000"
+    Set-RegistryString "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "10" "PCI\VEN_8086&DEV_1903&CC_1180"
 }
