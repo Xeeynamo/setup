@@ -82,5 +82,4 @@
 ####################
 1 mingw
 1 nodejs
-1 yarn
 2 python
