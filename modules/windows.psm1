@@ -94,10 +94,22 @@ function Set-EnableLongPathsForWin32($value) {
     Set-RegistryBool "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\FileSystem" "LongPathsEnabled " $value
 }
 
+function Set-DisableAdvertisementsForConsumerEdition([bool]$enable) {
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" "1"
+}
+
+function Disable-Telemetry() {
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection" "AllowTelemetry" "0"
+}
+
 function Set-DisableWindowsDefender([bool]$enable) {
     # Disables Windows Defender. Also impacts third-party antivirus software and apps.
     # https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware
     Set-RegistryValue "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender" "DisableAntiSpyware" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender" "DisableRoutinelyTakingAction" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\Real-Time Protection" "DisableBehaviorMonitoring" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\Real-Time Protection" "DisableOnAccessProtection" "1"
+    Set-RegistryValue "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\Real-Time Protection" "DisableScanOnRealtimeEnable" "1"
 }
 
 function Set-DarkTheme([bool]$enable) {
@@ -124,6 +136,7 @@ function Disable-AdministratorSecurityPrompt() {
 
 function Disable-BingSearchInStartMenu {
     Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "BingSearchEnabled" "0"
+    Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer" "DisableSearchBoxSuggestions" "1"
 }
 
 function Set-OtherWindowsStuff {
@@ -140,4 +153,33 @@ function Set-OtherWindowsStuff {
 function Remove-3dObjectsFolder {
     Remove-RegistryFolder "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
     Remove-RegistryFolder "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+}
+
+function Disable-IntelPowerThrottling {
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyDeviceIDs" "1"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyDeviceIDsRetroactive" "1"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyInstanceIDs" "1"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions" "DenyInstanceIDsRetroactive" "0"
+    
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "1" "*INT3400"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "2" "*INT3402"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "3" "*INT3403"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "4" "*INT3404"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "5" "*INT3407"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "6" "*INT3409"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "7" "PCI\VEN_8086&DEV_1603&CC_1180"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "8" "PCI\VEN_8086&DEV_1903&CC_1180"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "9" "PCI\VEN_8086&DEV_8A03&CC_1180"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyDeviceIDs" "10" "PCI\VEN_8086&DEV_9C24&CC_1180"
+    
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "1" "ACPI\VEN_INT&DEV_3403"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "2" "ACPI\INT3403"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "3" "*INT3403"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "4" "ACPI\VEN_INT&DEV_3400"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "5" "ACPI\INT3400"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "6" "*INT3400"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "7" "PCI\VEN_8086&DEV_1903&SUBSYS_07BE1028&REV_05"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "8" "PCI\VEN_8086&DEV_1903&SUBSYS_07BE1028"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "9" "PCI\VEN_8086&DEV_1903&CC_118000"
+    Set-RegistryValue "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" "10" "PCI\VEN_8086&DEV_1903&CC_1180"
 }

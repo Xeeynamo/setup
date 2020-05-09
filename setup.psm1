@@ -12,6 +12,9 @@ function Start-Setup {
     Install-UserProfile
     Install-StartLayout "./configs/start-layout.xml"
     Install-WindowsDeveloperMode
+    Set-DisableAdvertisementsForConsumerEdition $true
+    Disable-Telemetry
+    Disable-IntelPowerThrottling
     Set-HidePeopleOnTaskbar $true
     Set-ShowPeopleOnTaskbar $false
     Set-SmallButtonsOnTaskbar $true
