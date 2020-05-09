@@ -61,10 +61,6 @@ function Start-Setup {
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
 
-    Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
-        & "./scripts/block-telemetry.ps1"
-    }
-
     Install-VisualStudioProfessional (Join-VisualStudioConfigurations @(
         "./configs/visualstudio/core.vsconfig",
         "./configs/visualstudio/dotnet.vsconfig",
