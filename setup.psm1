@@ -33,12 +33,14 @@ function Start-Setup {
     Uninstall-StoreApps
     Install-Ubuntu
 
+    # This will fail in Windows Sandbox
     @(
         "Printing-XPSServices-Features"
         "Printing-XPSServices-Features"
         "FaxServicesClientPackage"
     ) | ForEach-Object { Disable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
 
+    # This will fail in Windows Sandbox
     @(
         "TelnetClient"
         "HypervisorPlatform"
