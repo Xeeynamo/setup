@@ -54,6 +54,10 @@ function Start-Setup {
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
 
+    Remove-DesktopIcon
+    Remove-HiddenAttribute "/ProgramData"
+    Remove-HiddenAttribute (Join-Path $env:USERPROFILE "AppData")
+
     Install-Foobar2000Plugins "./configs/foobar2000plugins.txt"
     Install-VsCodeExtensions "./configs/vscode-extensions.txt"
 
@@ -105,4 +109,13 @@ function Install-VsCodeExtensions([string]$configFileName) {
         ForEach-Object {
             Install-VsCodeExtension $_
         }
+}
+
+function Remove-DesktopIcon() {
+    Remove-Item -Path ((Join-Path $Env:USERPROFILE "Desktop") + "/*.lnk")
+    Remove-Item -Path "/Users/Public/Desktop/*.lnk"
+}
+
+function Remove-HiddenAttribute([string]$path) {
+    Set-ItemProperty $path -Name Attributes -Value Normal
 }
