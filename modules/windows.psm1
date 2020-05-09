@@ -25,7 +25,15 @@ function Uninstall-Ubuntu() {
 }
 
 function Install-StartLayout([string]$fileName) {
+    # Unfortunately the function above imports the layout only for the "Default user"
     Import-StartLayout -LayoutPath $fileName -MountPath $env:SystemDrive\
+    
+    # so we have to import it to the user manually.
+    $layoutDestinationPath = Join-Path $env:LOCALAPPDATA "Microsoft/Windows/Shell"
+    $dstFile = Join-Path $layoutDestinationPath "LayoutModification.xml"
+
+    New-MakeDirectoryForce $layoutDestinationPath
+    Copy-Item $fileName $dstFile -Force
 
     # This will reset the start menu
     reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" /va /f
