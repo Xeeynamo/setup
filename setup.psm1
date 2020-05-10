@@ -17,7 +17,7 @@ function Start-Setup {
     Disable-Telemetry
     Disable-IntelPowerThrottling
     Set-HidePeopleOnTaskbar $true
-    Set-ShowPeopleOnTaskbar $false
+    Set-ShowSearchOnTaskbar $false
     Set-SmallButtonsOnTaskbar $true
     Set-MultiMonitorTaskbarMode "2"
     Set-DisableWindowsDefender $true
