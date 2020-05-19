@@ -1,7 +1,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+FULL_TIME='\t'
+USER_NAME='\u'
+HOST_NAME='\h'
+HOST_FULLNAME='\H'
+CURRENT_PATH='\W'
+CURRENT_FULLPATH='\w'
+WHITE='\[\033[00m\]'
+LIGHT_YELLOW='\[\033[33m\]'
+LIGHT_PURPLE="\[\033[38;5;13m\]"
+LIGHT_GREEN="\[\033[32m\]"
+LIGHT_CYAN="\[\033[36m\]"
+RESET="\[$(tput sgr0)\]"
+
+export PS1="$LIGHT_PURPLE[$FULL_TIME] $LIGHT_GREEN$USER_NAME@$HOST_NAME $LIGHT_YELLOW$CURRENT_FULLPATH$LIGHT_CYAN`__git_ps1`\n$RESET$ "
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
