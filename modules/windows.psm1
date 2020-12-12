@@ -14,7 +14,7 @@ function Uninstall-WindowsFeature($feature) {
 
 function Install-Ubuntu() {
     Install-WindowsFeature Microsoft-Windows-Subsystem-Linux
-    Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+    Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
     Add-AppxPackage -Path .\Ubuntu.appx
     Remove-Item -Path .\Ubuntu.appx -Force
 }
