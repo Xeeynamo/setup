@@ -1,5 +1,6 @@
 Get-ChildItem .\modules\*.psm1 | Import-Module -Force
 $global:setupPath = (Get-Location).Path
+$global:userDir = "D:\Xeeynamo"
 
 function Start-Setup {
     Write-Output "Beginning the set-up"
@@ -25,6 +26,7 @@ function Start-Setup {
     Set-DisableLockScreen $true
     Set-DisableAeroShake $true
     Set-EnableLongPathsForWin32 $true
+    Set-MicrosoftEdgePreload $false
     Set-OtherWindowsStuff
     Remove-3dObjectsFolder
     Disable-AdministratorSecurityPrompt
@@ -95,15 +97,6 @@ function Start-Setup {
     }
 
     Remove-TempDirectory
-}
-
-function Set-ShellFolders {
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "Desktop" "D:\Xeeynamo\Desktop"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Music" "D:\Xeeynamo\Music"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Pictures" "D:\Xeeynamo\Pictures"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Video" "D:\Xeeynamo\Video"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "Personal" "D:\Xeeynamo\Documents"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "{374DE290-123F-4565-9164-39C4925E467B}" "D:\Xeeynamo\Downloads"
 }
 
 function Install-Foobar2000Plugins([string]$configFileName) {

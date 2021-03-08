@@ -1,3 +1,21 @@
+function Set-ShellFolders {
+    $userDir = $global:userDir
+    @(
+        "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders",
+        "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
+    ) | % {
+        Write-Host "aaa"
+        Write-Host $_
+        Set-RegistryString $_ "Desktop" "${userDir}\Desktop"
+        Set-RegistryString $_ "My Music" "${userDir}\Music"
+        Set-RegistryString $_ "My Pictures" "${userDir}\Pictures"
+        Set-RegistryString $_ "My Video" "${userDir}\Video"
+        Set-RegistryString $_ "Personal" "${userDir}\Documents"
+        Set-RegistryString $_ "{374DE290-123F-4565-9164-39C4925E467B}" "${userDir}\Downloads"
+        Set-RegistryString $_ "{7D83EE9B-2244-4E70-B1F5-5393042AF1E4}" "${userDir}\Downloads"
+    }
+}
+
 function Install-WindowsFeature($feature) {
     $featureState = Get-WindowsOptionalFeature -Online -FeatureName $feature
     if ($feature -ne "Enabled") {
@@ -81,6 +99,13 @@ function Set-HidePeopleOnTaskbar([bool]$enable) {
 function Set-ShowSearchOnTaskbar([bool]$enable) {
     Set-RegistryBool "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" $enable
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" $enable
+    Set-RegistryBool "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowCortanaButton" $enable
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowCortanaButton" $enable
+}
+
+function Set-ShowTaskOnTaskbar([bool]$enable) {
+    Set-RegistryBool "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" $enable
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" $enable
 }
 
 function Set-SmallButtonsOnTaskbar([bool]$enable) {
@@ -102,9 +127,6 @@ function Set-DisableAeroShake($value) {
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer" "NoWindowMinimizingShortcuts " $value
     Set-RegistryBool "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "DisallowShaking " $value
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "DisallowShaking " $value
-}
-
-function Disable-AeroShaking {
 }
 
 function Set-EnableLongPathsForWin32($value) {
@@ -154,6 +176,11 @@ function Disable-AdministratorSecurityPrompt() {
 function Disable-BingSearchInStartMenu {
     Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "BingSearchEnabled" "0"
     Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer" "DisableSearchBoxSuggestions" "1"
+}
+
+function Set-MicrosoftEdgePreload {
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" "AllowPrelaunch" $enable
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader" "AllowTabPreloading" $enable
 }
 
 function Set-OtherWindowsStuff {

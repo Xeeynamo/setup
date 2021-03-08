@@ -21,7 +21,7 @@ function Uninstall-StoreApps {
         "Microsoft.BingTranslator"
         "Microsoft.BingWeather"
         #"Microsoft.FreshPaint"
-        "Microsoft.Microsoft3DViewer"
+        #"Microsoft.Microsoft3DViewer"
         "Microsoft.MicrosoftOfficeHub"
         "Microsoft.MicrosoftSolitaireCollection"
         "Microsoft.MicrosoftPowerBIForWindows"
@@ -75,7 +75,7 @@ function Uninstall-StoreApps {
         "Microsoft.MixedReality.Portal"
         "Microsoft.ScreenSketch"
         #"Microsoft.XboxGamingOverlay"
-        "Microsoft.YourPhone"
+        #"Microsoft.YourPhone"
 
         # non-Microsoft
         "9E2F88E3.Twitter"
@@ -121,6 +121,8 @@ function Uninstall-StoreApps {
 
         # apps which other apps depend on
         "Microsoft.Advertising.Xaml"
+        
+        "Microsoft.549981C3F5F10" #Cortana
     ) | ForEach-Object {
         Get-AppxPackage -Name $_ -AllUsers | Remove-AppxPackage -AllUsers
     
