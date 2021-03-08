@@ -30,16 +30,24 @@ function Uninstall-WindowsFeature($feature) {
     }
 }
 
+function Install-Appx([string]$url, [string]$name) {
+    Invoke-WebRequest -Uri $url -OutFile $name -UseBasicParsing
+    Add-AppxPackage -Path .\$name
+    Remove-Item -Path .\$name -Force
+}
+
 function Install-Ubuntu() {
     Install-WindowsFeature Microsoft-Windows-Subsystem-Linux
-    Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
-    Add-AppxPackage -Path .\Ubuntu.appx
-    Remove-Item -Path .\Ubuntu.appx -Force
+    Install-Appx("https://aka.ms/wslubuntu2004", "Ubuntu.appx")
 }
 
 function Uninstall-Ubuntu() {
     Uninstall-WindowsFeature Microsoft-Windows-Subsystem-Linux
     Get-AppxPackage -Name CanonicalGroupLimited.Ubuntu18.04onWindows | Remove-AppxPackage
+}
+
+function Install-WindowsTerminal() {
+    Install-Appx("https://github.com/microsoft/terminal/releases/download/v1.6.10571.0/Microsoft.WindowsTerminal_1.6.10571.0_8wekyb3d8bbwe.msixbundle", "WindowsTerminal.msixbundle")
 }
 
 function Install-StartLayout([string]$fileName) {

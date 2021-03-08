@@ -34,6 +34,7 @@ function Start-Setup {
     Disable-EasyAccessKeyboard
     Set-FolderViewOptions
     Uninstall-StoreApps
+    Install-WindowsTerminal
     Install-Ubuntu
 
     # This will fail in Windows Sandbox
