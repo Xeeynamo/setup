@@ -104,6 +104,11 @@ function Set-HidePeopleOnTaskbar([bool]$enable) {
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer" "HidePeopleBar" $enable
 }
 
+function Set-ShowNewsWidget([bool]$enable) {
+    Set-RegistryBool "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds" "ShellFeedsTaskbarViewMode" $enable
+    Set-RegistryBool "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Feeds" "ShellFeedsTaskbarViewMode" $enable
+}
+
 function Set-ShowSearchOnTaskbar([bool]$enable) {
     Set-RegistryBool "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" $enable
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" $enable
