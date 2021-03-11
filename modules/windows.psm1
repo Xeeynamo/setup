@@ -191,7 +191,7 @@ function Disable-BingSearchInStartMenu {
     Set-RegistryValue "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer" "DisableSearchBoxSuggestions" "1"
 }
 
-function Set-MicrosoftEdgePreload {
+function Set-MicrosoftEdgePreload([bool]$enable) {
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" "AllowPrelaunch" $enable
     Set-RegistryBool "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader" "AllowTabPreloading" $enable
 }
