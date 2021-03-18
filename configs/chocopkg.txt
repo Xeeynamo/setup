@@ -13,7 +13,6 @@
 # Multimedia
 ####################
 1 foobar2000
-1 spotify
 2 k-litecodecpackfull
 2 audacity
 2 vlc
@@ -46,8 +45,7 @@
 2 sysinternals
 2 win32diskimager
 2 cheatengine
-2 windirstat
-2 bulkrenameutility
+2 wiztree
 
 ####################
 # Development
@@ -62,7 +60,7 @@
 2 postman
 2 angryip
 2 fiddler
-#2 docker-cli
+2 docker-desktop
 
 ####################
 # IDE and editors
