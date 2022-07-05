@@ -31,8 +31,8 @@
 ####################
 # Monitoring
 ####################
+1 throttlestop
 2 coretemp
-2 intel-xtu
 2 crystaldiskinfo
 2 crystaldiskmark
 2 batteryinfoview
